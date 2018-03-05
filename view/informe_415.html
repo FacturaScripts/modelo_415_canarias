@@ -1,13 +1,13 @@
 {include="header"}
 
-<form name="f_347" action="{$fsc->url()}" method="post" class="form">
+<form name="f_415" action="{$fsc->url()}" method="post" class="form">
    <div class="container-fluid">
       <div class="row">
          <div class="col-sm-12">
             <div class="page-header">
                <h1>
                   <span class="glyphicon glyphicon-book"></span>
-                  Modelo 347
+                  Modelo 415
                   <a class="btn btn-xs btn-default hidden-print" href="{$fsc->url()}" title="Recargar la página">
                      <span class="glyphicon glyphicon-refresh"></span>
                   </a>
@@ -20,11 +20,15 @@
                   </span>
                </h1>
                <p class="help-block">
-                  El Modelo 347 es una declaración anual informativa de operaciones con terceras personas.
-                  Los empresarios y profesionales están obligados a la presentación del Modelo 347 siempre
+                  Los Modelos 415 es una declaración anual informativa de operaciones con terceras personas.
+                  Los empresarios y profesionales están obligados a la presentación del Modelo 415 siempre
                   que hayan realizado operaciones con terceros por importe superior a 3.005,06 € durante
                   el año natural (se puede cambiar la cantidad), computando de forma separada las entregas
                   y las adquisiciones de bienes y servicios.
+               </p>
+               <p class="help-block">
+                  Es equivalente a los modelos 347 y 190 de forma conjunta, siempre que hayan realizado 
+                  operaciones con terceros por importe superior a 3.005,06 € durante el año natural
                </p>
             </div>
          </div>
@@ -33,7 +37,7 @@
          <div class="col-sm-2">
             <div class="form-group">
                Ejercicio:
-               <select class="form-control" name="ejercicio" onchange="document.f_347.submit()">
+               <select class="form-control" name="ejercicio" onchange="document.f_415.submit()">
                {loop="$fsc->ejercicio->all()"}
                   {if="!$fsc->sejercicio"}
                   <option value="{$value->codejercicio}">{$value->nombre}</option>
@@ -49,7 +53,7 @@
          <div class="col-sm-2">
             <div class="form-group">
                Examinar:
-               <select class="form-control" name="examinar" onchange="document.f_347.submit()">
+               <select class="form-control" name="examinar" onchange="document.f_415.submit()">
                   <option value="facturacion">Facturación</option>
                   {if="$fsc->examinar=='contabilidad'"}
                   <option value="contabilidad" selected="">Contabilidad</option>
@@ -141,11 +145,21 @@
                   <td></td>
                   <td></td>
                   <td></td>
-                  <td class="text-right"><b>{$fsc->show_precio($fsc->datos_cli['totales'][0])}</b></td>
-                  <td class="text-right"><b>{$fsc->show_precio($fsc->datos_cli['totales'][1])}</b></td>
-                  <td class="text-right"><b>{$fsc->show_precio($fsc->datos_cli['totales'][2])}</b></td>
-                  <td class="text-right"><b>{$fsc->show_precio($fsc->datos_cli['totales'][3])}</b></td>
-                  <td class="text-right"><b>{$fsc->show_precio($fsc->datos_cli['totales'][4])}</b></td>
+                  <td class="text-right">
+                     <b>{$fsc->show_precio($fsc->datos_cli['totales'][0])}</b>
+                  </td>
+                  <td class="text-right">
+                     <b>{$fsc->show_precio($fsc->datos_cli['totales'][1])}</b>
+                  </td>
+                  <td class="text-right">
+                     <b>{$fsc->show_precio($fsc->datos_cli['totales'][2])}</b>
+                  </td>
+                  <td class="text-right">
+                     <b>{$fsc->show_precio($fsc->datos_cli['totales'][3])}</b>
+                  </td>
+                  <td class="text-right">
+                     <b>{$fsc->show_precio($fsc->datos_cli['totales'][4])}</b>
+                  </td>
                </tr>
             </table>
          </div>

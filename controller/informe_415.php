@@ -24,7 +24,7 @@ require_model('factura_cliente.php');
 require_model('factura_proveedor.php');
 require_model('proveedor.php');
 
-class informe_347 extends fs_controller
+class informe_415 extends fs_controller
 {
    public $cantidad;
    public $datos_cli;
@@ -37,7 +37,7 @@ class informe_347 extends fs_controller
    
    public function __construct()
    {
-      parent::__construct(__CLASS__, 'Modelo 347', 'informes');
+      parent::__construct(__CLASS__, 'Modelo 415', 'informes');
    }
    
    protected function private_core()
